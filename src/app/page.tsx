@@ -4,18 +4,6 @@ import { useEffect, useState } from "react";
 
 export default function Home() {
   const [counter, setCounter] = useState(0);
-  // useEffect(() => {
-  //   const messageListener = window.addEventListener(
-  //     "message",
-  //     (nativeEvent) => {
-  //       console.log(nativeEvent?.data);
-  //     }
-  //   );
-
-  //   return () => {
-  //     return messageListener;
-  //   };
-  // }, []);
 
   setInterval(() => {
     window.postMessage("TEST33");
@@ -32,6 +20,7 @@ export default function Home() {
         <div className="social-login text-center z-10">
           <button
             onClick={sendMessage}
+            id="googleAuthButton"
             className="bg-red-500 hover:bg-red-600 text-white font-bold text-xl px-20 py-5 rounded-md shadow-md"
           >
             Google auth
