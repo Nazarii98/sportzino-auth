@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 
 export default function Home() {
+  const [counter, setCounter] = useState(0);
   useEffect(() => {
     const messageListener = window.addEventListener(
       "message",
@@ -18,6 +19,7 @@ export default function Home() {
 
   const sendMessage = () => {
     window.postMessage("Hi from web app");
+    setCounter((prev) => prev + 1);
   };
 
   return (
@@ -32,6 +34,7 @@ export default function Home() {
           </button>
         </div>
       </div>
+      <div>{`Counter ${counter}`}</div>
     </main>
   );
 }
