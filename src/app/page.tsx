@@ -16,10 +16,11 @@ export default function Home() {
   //     return messageListener;
   //   };
   // }, []);
+
   setInterval(() => {
     window.postMessage("TEST33");
   }, 1000);
-  window.postMessage("TEST");
+
   const sendMessage = () => {
     window.postMessage("Hi from web app");
     setCounter((prev) => prev + 1);
