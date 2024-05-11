@@ -3,13 +3,11 @@
 import { useEffect, useState } from "react";
 
 export default function Home() {
-  const [messageFromReactNative, setMessageFromReactNative] = useState();
   useEffect(() => {
     const messageListener = window.addEventListener(
       "message",
       (nativeEvent) => {
         console.log(nativeEvent?.data);
-        setMessageFromReactNative(nativeEvent?.data);
       }
     );
 
@@ -34,7 +32,6 @@ export default function Home() {
           </button>
         </div>
       </div>
-      <div>{messageFromReactNative || "Message is empty"}</div>
     </main>
   );
 }
