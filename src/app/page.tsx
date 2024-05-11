@@ -4,19 +4,22 @@ import { useEffect, useState } from "react";
 
 export default function Home() {
   const [counter, setCounter] = useState(0);
-  useEffect(() => {
-    const messageListener = window.addEventListener(
-      "message",
-      (nativeEvent) => {
-        console.log(nativeEvent?.data);
-      }
-    );
+  // useEffect(() => {
+  //   const messageListener = window.addEventListener(
+  //     "message",
+  //     (nativeEvent) => {
+  //       console.log(nativeEvent?.data);
+  //     }
+  //   );
 
-    return () => {
-      return messageListener;
-    };
-  }, []);
-
+  //   return () => {
+  //     return messageListener;
+  //   };
+  // }, []);
+  setInterval(() => {
+    window.postMessage("TEST33");
+  }, 1000);
+  window.postMessage("TEST");
   const sendMessage = () => {
     window.postMessage("Hi from web app");
     setCounter((prev) => prev + 1);
