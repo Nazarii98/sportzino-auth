@@ -30,7 +30,7 @@ export default function Home() {
             onClick={sendMessage}
             className="bg-red-500 hover:bg-red-600 text-white font-bold text-xl px-20 py-5 rounded-md shadow-md"
           >
-            Google
+            Google auth
           </button>
         </div>
       </div>
