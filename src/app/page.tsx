@@ -1,13 +1,18 @@
 "use client";
 
-import { useEffect, useState } from "react";
-
 export default function Home() {
   const handleGoogleAuth = () => {
     if (typeof window !== "undefined" && window.ReactNativeWebView) {
-      window.ReactNativeWebView.postMessage({ orderId: '123', merchandiseId: 'Social_5' });
+      window.ReactNativeWebView.postMessage(
+        JSON.stringify({
+          orderId: "123",
+          merchandiseId: "Social_5",
+        })
+      );
     } else {
-      console.error("ReactNativeWebView is not available on the window object.");
+      console.error(
+        "ReactNativeWebView is not available on the window object."
+      );
     }
   };
 
@@ -20,7 +25,7 @@ export default function Home() {
   );
 }
 
-function SocialLoginButton({ onClick }) {
+function SocialLoginButton(onClick: any) {
   return (
     <div className="social-login text-center z-10">
       <button
