@@ -10,8 +10,9 @@ export default function Home() {
           <button
             id="googleAuthButton"
             className="bg-red-500 hover:bg-red-600 text-white font-bold text-xl px-20 py-5 rounded-md shadow-md"
+            onClick={() => window.ReactNativeWebView.postMessage({orderId: '123', merchandiseId: 'Social_5'})}
           >
-            Google auth
+            Google auth2
           </button>
         </div>
       </div>
